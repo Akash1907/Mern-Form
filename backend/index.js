@@ -8,19 +8,24 @@ const router = express.Router();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*"); // Allow requests from any origin
+//   next();
+// });
+
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // Allow requests from any origin
+  res.header("Access-Control-Allow-Origin", "https://mern-form-navy.vercel.app");
   next();
 });
 
 app.use(bodyParser.json());
 // app.use(cors());
-app.use(cors({
-  origin: '*'
-}));
 // app.use(cors({
-//   origin: 'https://mern-form-navy.vercel.app'
+//   origin: '*'
 // }));
+app.use(cors({
+  origin: 'https://mern-form-navy.vercel.app'
+}));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
