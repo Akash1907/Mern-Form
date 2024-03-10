@@ -106,7 +106,7 @@ function AddItem() {
     ) {
       axios
         .put(
-          `http://localhost:5000/items/updateUser/${editUser._id}`,
+          `https://mern-form-backend-zeta.vercel.app/items/updateUser/${editUser._id}`,
           userobject
         )
         .then((response) => {
@@ -128,7 +128,7 @@ function AddItem() {
       validateMobileNUmber()
     ) {
       axios
-        .post("http://localhost:5000/items/users", userobject)
+        .post("https://mern-form-backend-zeta.vercel.app/items/users", userobject)
         .then((response) => {
           console.log(response.data);
         })

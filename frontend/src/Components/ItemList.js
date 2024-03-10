@@ -7,7 +7,7 @@ function ItemList({ onEdit }) {
 
   const fetchUsers = () => {
     axios
-      .get("http://localhost:5000/items/getUsers")
+      .get("https://mern-form-backend-zeta.vercel.app/items/getUsers")
       .then((response) => {
         if (response.status !== 200) {
           throw new Error("Failed to fetch users");
@@ -29,7 +29,7 @@ function ItemList({ onEdit }) {
 
   const deleteUser = (userId) => {
     axios
-      .delete(`http://localhost:5000/items/deleteUser/${userId}`)
+      .delete(`https://mern-form-backend-zeta.vercel.app/items/deleteUser/${userId}`)
       .then((response) => {
         if (response.status === 200) {
           fetchUsers();
