@@ -18,26 +18,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// app.use(cors());
 app.use(bodyParser.json());
 
-const options = [
-  cors({
-    origin: '*',
-    methods: '*',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-  })
-];
-
-app.use(options);
-
-// app.use(cors());
-// app.use(cors({
-//   origin: '*'
-// }));
-// app.use(cors({
-//   origin: 'https://mern-form-navy.vercel.app'
-// }));
+app.use(cors({
+  origins: 'https://mern-form-navy.vercel.app/'
+}));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
