@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import EditItem from "./EditItem.js";
 import ItemList from "./ItemList.js";
 import "./AddItem.css";
 
