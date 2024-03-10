@@ -14,18 +14,30 @@ const PORT = process.env.PORT || 5000;
 // });
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://mern-form-navy.vercel.app");
+  res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 
 app.use(bodyParser.json());
+
+const options = [
+  cors({
+    origin: '*',
+    methods: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+];
+
+app.use(options);
+
 // app.use(cors());
 // app.use(cors({
 //   origin: '*'
 // }));
-app.use(cors({
-  origin: 'https://mern-form-navy.vercel.app'
-}));
+// app.use(cors({
+//   origin: 'https://mern-form-navy.vercel.app'
+// }));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
