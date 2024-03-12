@@ -7,13 +7,14 @@ const router = express.Router();
 const app = express();
 const PORT = 5000;
 
-// app.use(cors({
-//   origins: 'https://mern-form-navy.vercel.app/'
-// }));
+
 app.use(express.json());
 app.use(cors({
-  origins: '*'
+  origins: 'https://mern-form-navy.vercel.app'
 }));
+// app.use(cors({
+//   origins: '*'
+// }));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
