@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 
+.listOfItems{
+    padding: 3vh;
+}
 .userInfo{
     background-color: #FBEAEB;
     margin-bottom: 3vh;

@@ -3,12 +3,10 @@
 .AddItem{
     display: flex;
     align-items: center;
-    gap: 20vh;
-    position: fixed;
+    gap: 50vh;
     margin-left: 15vh;
-    /* margin-top: 15vh; */
     flex: 1;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 100vh;
 }
 .inputSection{
@@ -61,17 +59,13 @@
     border-radius: 13px;
     flex: 1;
     height: 80vh;
-    width: 60vh;
+    width: 40vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    margin-top: 10vh;
-    margin-left: 35vh;
     scroll-behavior: smooth;
     scrollbar-width: thin;          /* "auto" or "thin" */
     scrollbar-color: #2F3C7E white;
-}
-.ItemList2{
-    padding: 5vh;
+    margin-right: 15vh;
 }
 .submitBtn{
     height: 4vh;
@@ -91,3 +85,5 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+  }

@@ -7,7 +7,8 @@ function ItemList({ onEdit }) {
 
   const fetchUsers = () => {
     axios
-      .get("https://mern-form-backend-zeta.vercel.app/items/getUsers")
+      // .get("http://localhost:5000/items/getUsers")
+      .get('https://mern-form-backend-zeta.vercel.app/items/getUsers')
       .then((response) => {
         if (response.status !== 200) {
           throw new Error("Failed to fetch users");
@@ -29,6 +30,7 @@ function ItemList({ onEdit }) {
 
   const deleteUser = (userId) => {
     axios
+      // .delete(`http://localhost:5000/items/deleteUser/${userId}`)
       .delete(`https://mern-form-backend-zeta.vercel.app/items/deleteUser/${userId}`)
       .then((response) => {
         if (response.status === 200) {
@@ -38,7 +40,6 @@ function ItemList({ onEdit }) {
         }
       })
       .catch((error) => console.error("Error deleting user:", error));
-    console.log(userId);
     setTimeout(() => {
       alert("User successfully deleted");
     }, "700");
@@ -51,25 +52,28 @@ function ItemList({ onEdit }) {
   return (
     <div>
       {users.length === 0 ? (
-        <div className = 'noData'>No data to show</div>
+        <div className="noData">No data to show</div>
       ) : (
         <div className="listOfItems">
-          {users.slice().reverse().map((user) => (
-            <div key={user._id} className="userInfo">
-              <p className="item">Name: {user.name}</p>
-              <p className="item">Age: {user.age}</p>
-              <p className="item">Email: {user.email}</p>
-              <p className="item">Mobile Number: {user.mobileNumber}</p>
-              <div className="itemBtns">
-                <button className="btns" onClick={() => handleEdit(user)}>
-                  Edit
-                </button>
-                <button className="btns" onClick={() => deleteUser(user._id)}>
-                  Delete
-                </button>
+          {users
+            .slice()
+            .reverse()
+            .map((user) => (
+              <div key={user._id} className="userInfo">
+                <p className="item">Name: {user.name}</p>
+                <p className="item">Age: {user.age}</p>
+                <p className="item">Email: {user.email}</p>
+                <p className="item">Mobile Number: {user.mobileNumber}</p>
+                <div className="itemBtns">
+                  <button className="btns" onClick={() => handleEdit(user)}>
+                    Edit
+                  </button>
+                  <button className="btns" onClick={() => deleteUser(user._id)}>
+                    Delete
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       )}
     </div>

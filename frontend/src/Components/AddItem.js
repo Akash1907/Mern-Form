@@ -104,10 +104,11 @@ function AddItem() {
       validateMobileNUmber()
     ) {
       axios
-        .put(
-          `https://mern-form-backend-zeta.vercel.app/items/updateUser/${editUser._id}`,
-          userobject
-        )
+        // .put(
+        //   `http://localhost:5000/items/updateUser/${editUser._id}`,
+        //   userobject
+        // )
+        .put(`https://mern-form-backend-zeta.vercel.app/items/updateUser/${editUser._id}`, userobject)
         .then((response) => {
           console.log(response.data);
           setEditUser(false);
@@ -127,7 +128,8 @@ function AddItem() {
       validateMobileNUmber()
     ) {
       axios
-        .post("https://mern-form-backend-zeta.vercel.app/items/users", userobject)
+        // .post("http://localhost:5000/items/users", userobject)
+        .post("https://mern-form-backend-zeta.vercel.app/items/users",userobject)
         .then((response) => {
           console.log(response.data);
         })
@@ -194,7 +196,6 @@ function AddItem() {
               />
             </label>
           </div>
-          {/* <input type="submit" className="submitBtn" /> */}
           <button type="submit" className="submitBtn">
             {editUser ? "Update" : "Submit"}
           </button>

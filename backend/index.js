@@ -1,22 +1,18 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const User = require("./database/userInfo");
 require("./database/config");
 
 const router = express.Router();
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
-
-app.use(bodyParser.json());
-
+// app.use(cors({
+//   origins: 'https://mern-form-navy.vercel.app/'
+// }));
+app.use(express.json());
 app.use(cors({
-  origins: 'https://mern-form-navy.vercel.app/'
+  origins: '*'
 }));
 
 app.listen(PORT, () => {
