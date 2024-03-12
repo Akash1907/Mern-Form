@@ -202,9 +202,7 @@ function AddItem() {
         </form>
       </div>
       <div className="ItemList">
-        <div className="ItemList2">
           <ItemList onEdit={handleEdit} />
-        </div>
       </div>
     </div>
   );

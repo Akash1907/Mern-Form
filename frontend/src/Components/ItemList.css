@@ -39,3 +39,25 @@
     font-weight: 550;
     font-size: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+    .listOfItems{
+        padding: 2vh;
+    }
+    .userInfo{
+        margin-bottom: 1.5vh;
+        border-radius: 10px;
+        padding: 1.5vh;
+        font-size: 2vh;
+    }
+    .itemBtns{
+        gap: 2vh;
+    }
+    .btns{
+        font-size: 12px;
+        border-radius: 5px;
+        height: 3vh;
+        width: 8vh;
+    }
+
+}

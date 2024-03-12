@@ -3,11 +3,8 @@
 .AddItem{
     display: flex;
     align-items: center;
-    gap: 50vh;
-    margin-left: 15vh;
-    flex: 1;
     justify-content: space-between;
-    height: 100vh;
+    margin-top: 10vh;
 }
 .inputSection{
     display: flex;
@@ -17,6 +14,7 @@
     background-color: #FBEAEB;
     border-radius: 13px;
     padding: 2vh 20vh 5vh 10vh;
+    margin-left: 15vh;
 }
 .form{
     display: flex;
@@ -54,22 +52,19 @@
     font-family: "Madimi One", sans-serif;
 }
 .ItemList{
-    /* padding-left: 5vh; */
     border: 5px solid #2F3C7E;
     border-radius: 13px;
-    flex: 1;
     height: 80vh;
-    width: 40vh;
+    width: 60vh;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-width: thin;      
     scrollbar-color: #2F3C7E white;
     margin-right: 15vh;
 }
 .submitBtn{
     height: 4vh;
-    /* width: vh; */
     margin-left: 10vh;
     margin-top: 3vh;
     background-color: #2F3C7E;
@@ -86,4 +81,54 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .AddItem{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5vh;
+        margin-top: 2vh;
+    }
+    .inputSection{
+        margin-left: 5vh;
+        margin-right: 5vh;
+        height: 35vh;
+        width: 25vh;
+    }
+    .inputField{
+        border-radius: 3px;
+        height: 2vh;
+        width: 20vh;
+        border: 2px solid #2F3C7E;
+        padding-left: .5vh;
+        font-size: 1.5vh;
+        font-weight: 100;
+    }
+    .form{
+        margin-left: 5vh;
+    }
+    .heading{
+        font-size: 3vh;
+        font-weight: 600;
+        color: #2F3C7E;
+        margin-left: 10vh;
+    }
+    .label{
+        font-size: 2vh;
+        font-weight: 500;
+        grid-template-columns : 10vh 20vh;
+    }
+    .submitBtn{
+        height: 3vh;
+        margin-left: 10vh;
+        margin-top: 3vh;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+    .ItemList{
+        height: 40vh;
+        width: 54vh;
+        margin-left: 1vh;
+        margin-right: 1vh;
+    }
   }
